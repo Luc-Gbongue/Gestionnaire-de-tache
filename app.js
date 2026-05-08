@@ -26,14 +26,34 @@ function ajouterTache(){
     // // creation du bouton pour editer les taches
     let editButton = document.createElement("button");
     editButton.textContent = "Editer";
+
+    // definition de la class pour stylisation CSS futur
     editButton.classList.add("edit-btn");
+
+    // creer ecouteur d'évenement pour le bouton modifier
     editButton.onclick = function(){
-        li.remove();
+        let newstext = prompt("Modifier la tâche", text);
+
+         if (newstext !== "") {
+        li.firstChild.textContent = newstext;
+    }
     }
 
+
+    // ajout du bouton modifier a la liste de tache
     li.appendChild(editButton);
 
     // creation du bouton pour supprimer les taches
     let deleteButton =  document.createElement("button");
+    deleteButton.textContent = "Supprimer";
+    deleteButton.classList.add("delete-btn");
+
+    // creation de ecouteur d'evenement pour le bouton supprimer 
+    deleteButton.addEventListener("click", function(){
+        li.remove();
+    })
+
+    // ajout du bouton supprimer a la liste des tache 
+    li.appendChild(deleteButton);
 
 }

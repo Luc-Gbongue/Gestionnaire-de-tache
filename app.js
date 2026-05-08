@@ -24,5 +24,16 @@ function ajouterTache(){
     liste.appendChild(li);
 
     // // creation du bouton pour editer les taches
-    // let editButton = document.createElement("")
+    let editButton = document.createElement("button");
+    editButton.textContent = "Editer";
+    editButton.classList.add("edit-btn");
+    editButton.onclick = function(){
+        li.remove();
+    }
+
+    li.appendChild(editButton);
+
+    // creation du bouton pour supprimer les taches
+    let deleteButton =  document.createElement("button");
+
 }
